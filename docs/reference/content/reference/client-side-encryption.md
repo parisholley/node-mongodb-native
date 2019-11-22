@@ -88,14 +88,10 @@ Auto encryption is an **enterprise** only feature.
 The following example shows how to leverage a `ClientEncryption` instance to create a new key and use that key in the json schema map.
 
 ```js
-const mongodb = require('mongodb');
-const { MongoClient } = mongodb;
-
-// Note: you need to inject the mongodb library you are using to get the classes within
-// mongodb-client-encryption
-const { ClientEncryption } = require('mongodb-client-encryption')(mongodb);
-
 const crypto = require('crypto');
+const { MongoClient } = require('mongodb');
+const { ClientEncryption } = require('mongodb-client-encryption');
+
 
 const keyVaultNamespace = 'admin.datakeys';
 // This would have to be the same master key as was used to create the encryption key
